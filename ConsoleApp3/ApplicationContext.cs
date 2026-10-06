@@ -6,11 +6,14 @@ namespace ConsoleApp3
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users => Set<User>();
-        public ApplicationContext() => Database.EnsureCreated();
+        public DbSet<Post> Posts => Set<Post>();
+        public ApplicationContext() { }
 
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host = localhost; Port = 5432; Database = social_net_db; Username = postgres; Password = Ilyas255448");
+            if (!optionsBuilder.IsConfigured)
+                optionsBuilder.UseNpgsql("Host = localhost; Port = 5432; Database = social_net_db; Username = postgres; Password = Ilyas255448");
         }
     }
 }

@@ -9,5 +9,6 @@ namespace ConsoleApp3
         public int Id { get; set; }
         public string? Name { get; set; }
         public int Age { get; set; }
+        public List<Post> Posts { get; set; } = new();
     }
 }

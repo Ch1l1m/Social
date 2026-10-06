@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="ConsoleApp3.Tests/ConsoleApp3.Tests.csproj" />
   <Project Path="ConsoleApp3/ConsoleApp3.csproj" />
+  <Project Path="SocialNetwork.WebApi/SocialNetwork.WebApi.csproj" />
 </Solution>
